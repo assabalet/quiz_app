@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>問題 {{ qid+1 }}</title></head>
+<body>
+    <h2>Q{{ qid+1 }}: {{ question.question }}</h2>
+    <form method="POST">
+        {% for option in question.options %}
+            <input type="radio" name="choice" value="{{ loop.index0 }}" required> {{ option }}<br>
+        {% endfor %}
+        <button type="submit">次へ</button>
+    </form>
+</body>
+</html>
